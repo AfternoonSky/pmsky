@@ -1,6 +1,7 @@
 {
     "name": "pmsky",
     "scripts": {
-        "build": "cd landing && npm run build"
+        "build": "cd landing && npm run build",
+        "check": "cd landing && npm run check"
     }
 }

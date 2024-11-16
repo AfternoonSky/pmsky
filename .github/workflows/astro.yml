@@ -26,7 +26,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BUILD_PATH: "landing"
+  BUILD_PATH: "."
 
 jobs:
   check:
@@ -43,7 +43,7 @@ jobs:
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
       - name: Astro Check
         run: |
-          cd landing
+          cd ${{env.BUILD_PATH}}
           npm install
           npm run check
   build:
