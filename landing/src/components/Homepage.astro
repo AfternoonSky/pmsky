@@ -1,0 +1,54 @@
+---
+import Card from "./Card.astro";
+import Faq from "./Faq.astro";
+---
+
+<main class="homepage">
+  <header>
+    <h1>Welcome to <i>AfternoonSky</i></h1>
+    <p>
+      <i>enabling <b>peer moderation</b> on bsky</i>
+    </p>
+  </header>
+  <ul role="list" class="link-card-grid">
+    <Card
+      href="#learnmore"
+      title="Learn More"
+      body="Read about what makes PMSky."
+    />
+    <Card
+      disabled
+      href="//app.pmsky.social"
+      title="Enter"
+      body="Sorry, we're not ready for primetime yet!"
+    />
+  </ul>
+</main>
+<div id="learnmore">
+  <Faq />
+</div>
+
+<style>
+  main.homepage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .link-card-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+    margin-bottom: 20vh;
+  }
+
+  @media screen and (min-width: 400px) {
+    .link-card-grid {
+      flex-direction: row;
+      margin-bottom: 10vh;
+    }
+  }
+</style>
