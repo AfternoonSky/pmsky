@@ -44,6 +44,7 @@ jobs:
       - name: Astro Check
         run: |
           npm install
+          cd landing
           npm run check
   build:
     name: Build
