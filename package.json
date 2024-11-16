@@ -3,10 +3,5 @@
     "scripts": {
         "build": "cd landing && npm run build",
         "check": "cd landing && npm run check"
-    },
-    "dependencies": {
-        "astro": "^4.16.13",
-        "@astrojs/check": "^0.9.4",
-        "typescript": "^5.6.3"
     }
 }
