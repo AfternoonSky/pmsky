@@ -1,20 +1,23 @@
 ---
 import Card from "./Card.astro";
-import Faq from "./Faq.astro";
+import About from "./About.astro";
 ---
 
+<header>
+  <h1>Welcome to <i>AfternoonSky</i></h1>
+  <p>
+    <i>enabling <b>peer moderation</b> on bsky</i>
+  </p>
+</header>
 <main class="homepage">
-  <header>
-    <h1>Welcome to <i>AfternoonSky</i></h1>
-    <p>
-      <i>enabling <b>peer moderation</b> on bsky</i>
-    </p>
-  </header>
+  <div id="learnmore">
+    <About />
+  </div>
   <ul role="list" class="link-card-grid">
     <Card
-      href="#learnmore"
+      href="//docs.pmsky.social"
       title="Learn More"
-      body="Read about what makes PMSky."
+      body="Read the docs for PMsky."
     />
     <Card
       disabled
@@ -24,16 +27,16 @@ import Faq from "./Faq.astro";
     />
   </ul>
 </main>
-<div id="learnmore">
-  <Faq />
-</div>
 
 <style>
+  header {
+    padding-bottom: 1em;
+  }
   main.homepage {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: scroll;
   }
   .link-card-grid {
     display: flex;
@@ -41,11 +44,14 @@ import Faq from "./Faq.astro";
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
-    padding: 0;
+    padding: 1em 0;
     margin-bottom: 20vh;
   }
 
   @media screen and (min-width: 400px) {
+    header {
+      padding-bottom: 2em;
+    }
     .link-card-grid {
       flex-direction: row;
       margin-bottom: 10vh;
