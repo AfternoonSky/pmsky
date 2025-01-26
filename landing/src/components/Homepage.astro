@@ -4,57 +4,67 @@ import About from "./About.astro";
 ---
 
 <header>
-  <h1>Welcome to <i>AfternoonSky</i></h1>
+  <h1>Welcome to <i>Afternoon<span class="blue">Sky</span></i></h1>
   <p>
-    <i>enabling <b>peer moderation</b> on bsky</i>
+    <i
+      >enabling <b
+        ><span class="blue">p</span>eer <span class="blue">m</span>oderation</b
+      > on bsky
+    </i>
   </p>
-</header>
-<main class="homepage">
-  <div id="learnmore">
-    <About />
-  </div>
-  <ul role="list" class="link-card-grid">
-    <Card
-      href="//docs.pmsky.social"
-      title="Learn More"
-      body="Read the docs for PMsky."
-    />
-    <!-- href="//app.pmsky.social" -->
-    <Card
-      href="mailto:request@pmsky.social"
-      title="Enter"
-      body="We're currently in alpha testing, message @pmsky.social to request access."
-    />
-  </ul>
-</main>
 
-<style>
-  header {
-    padding-bottom: 1em;
-  }
-  main.homepage {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: scroll;
-  }
-  .link-card-grid {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 1em 0;
-    margin-bottom: 20vh;
-  }
+  <main class="homepage">
+    <div id="learnmore">
+      <About />
+    </div>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="//docs.pmsky.social"
+        title="Learn More"
+        body="Read the docs for PMsky."
+      />
+      <!-- href="//app.pmsky.social" -->
+      <Card
+        href="mailto:request@pmsky.social"
+        title="Enter"
+        body="We're currently in alpha testing, message @pmsky.social to request access."
+      />
+    </ul>
+  </main>
 
-  @media screen and (min-width: 400px) {
+  <style>
     header {
-      padding-bottom: 2em;
+      padding-bottom: 1em;
     }
+    main.homepage {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: scroll;
+    }
+
+    .blue {
+      color: #7cb8ff;
+    }
+
     .link-card-grid {
-      flex-direction: row;
-      margin-bottom: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 1em 0;
+      margin-bottom: 20vh;
     }
-  }
-</style>
+
+    @media screen and (min-width: 400px) {
+      header {
+        padding-bottom: 2em;
+      }
+      .link-card-grid {
+        flex-direction: row;
+        margin-bottom: 10vh;
+      }
+    }
+  </style>
+</header>
