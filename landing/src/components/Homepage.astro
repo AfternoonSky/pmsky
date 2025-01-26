@@ -45,7 +45,12 @@ import About from "./About.astro";
   }
 
   .blue {
-    color: #7cb8ff;
+    color: var(--nc-lk-2);
+  }
+  @media (prefers-color-scheme: dark) {
+    .blue {
+      color: #7cb8ff;
+    }
   }
 
   .link-card-grid {
